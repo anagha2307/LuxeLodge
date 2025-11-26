@@ -7,14 +7,13 @@ const LandingPage = () => {
         "New York", "Los Angeles", "London"
     ]
     return (
-        <div className="flex flex-col items-start justify-center px-6 md:px-16 text-white
+        <div className="flex flex-col items-start justify-center px-4 md:px-16 text-white
             bg-[url('https://media.istockphoto.com/id/2110310187/photo/luxury-tropical-pool-villa-at-dusk.jpg?s=612x612&w=0&k=20&c=r8UTpMnbLWD_DOKHAcu6dw-MJEcGg0CTqt0ICa84D84=')] bg-cover bg-center bg-no-repeat w-full h-screen">
             <p className="bg-blue-400 px-3 5 py-1 rounded-full mt-25 md:mt-20">The Ultimate Hotel Experience</p>
             <h1 className="text-2xl md:text-5xl font-bold md:font-extrabold max-w-xl mt-4">Your Stay, Just a Click Away</h1>
             <h1 className="text-sm md:text-base max-w-130 mt-2">Bringing comfort and convenience together by offering curated stays, honest reviews, and quick bookings for stress-free travel planning.</h1>
             {/* Hotel Booking Form */}
-            <form className='bg-white text-gray-500 rounded-lg px-5 py-5 mt-8 flex flex-col md:flex-row 
-            flex-wrap max-md:items-center gap-4'>
+            <form className='bg-white text-gray-500 rounded-lg px-15 md:px-5 py-5 mt-8 mb-5 flex flex-col md:flex-row flex-wrap max-md:items-center gap-4'>
                 <div>
                     <div className='flex items-center gap-2'>
                         <FontAwesomeIcon icon={faLocationDot} />
@@ -30,18 +29,18 @@ const LandingPage = () => {
                     </datalist>
                 </div>
                 <div>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 w-50'>
                         <FontAwesomeIcon icon={faCalendar} />
                         <label htmlFor="checkIn">Check in</label>
                     </div>
-                    <input id="checkIn" type="date" className=" rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none" />
+                    <input id="checkIn" type="date" className=" rounded border border-gray-200 px-8 py-1.5 mt-1.5 text-sm outline-none" />
                 </div>
                 <div>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 w-50'>
                         <FontAwesomeIcon icon={faCalendar} />
                         <label htmlFor="checkOut">Check out</label>
                     </div>
-                    <input id="checkOut" type="date" className=" rounded border border-gray-200 px-3 
+                    <input id="checkOut" type="date" className=" rounded border border-gray-200 px-8 
                     py-1.5 mt-1.5 text-sm outline-none" />
                 </div>
                 <div className='flex md:flex-col max-md:gap-2 max-md:items-center'>
