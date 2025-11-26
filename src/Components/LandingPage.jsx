@@ -13,7 +13,8 @@ const LandingPage = () => {
             <h1 className="text-2xl md:text-5xl font-bold md:font-extrabold max-w-xl mt-4">Your Stay, Just a Click Away</h1>
             <h1 className="text-sm md:text-base max-w-130 mt-2">Bringing comfort and convenience together by offering curated stays, honest reviews, and quick bookings for stress-free travel planning.</h1>
             {/* Hotel Booking Form */}
-            <form className='bg-white text-gray-500 rounded-lg px-10 py-5 mt-8 flex flex-col md:flex-row max-md:items-center gap-4 max-md:mx-auto'>
+            <form className='bg-white text-gray-500 rounded-lg px-5 py-5 mt-8 flex flex-col md:flex-row 
+            flex-wrap max-md:items-center gap-4'>
                 <div>
                     <div className='flex items-center gap-2'>
                         <FontAwesomeIcon icon={faLocationDot} />
@@ -47,7 +48,7 @@ const LandingPage = () => {
                     <label htmlFor="guests">Guests</label>
                     <input min={1} max={4} id="guests" type="number" className=" rounded border border-gray-200 px-3 py-1.5 mt-1.5 text-sm outline-none  max-w-16" placeholder="0"/>
                 </div>
-                <button className='flex items-center justify-center gap-1 rounded-md bg-black py-3 px-5 mt-3 text-white my-auto cursor-pointer max-md:w-full max-md:py-1' >
+                <button className='flex items-center justify-center gap-1 rounded-md bg-black py-3 px-5 mt-3 text-white my-auto cursor-pointer max-md:py-1' >
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                     <span>Search</span>
                 </button>
