@@ -23,14 +23,14 @@ const Header = () => {
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 bg-transparent w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-sky-600 backdrop-blur-lg py-3 md:py-1 h-20" : "py-3 md:py-1"}`}>
+        <nav className={`fixed top-0 left-0 bg-transparent w-full flex items-center justify-between px-4 md:px-16 lg:px-24 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-sky-600 backdrop-blur-lg py-3 md:py-1 h-18" : "py-3 md:py-1"}`}>
             {/* Logo */}
             <Link to={'/'} className="flex items-center">
-                <img src='logo.png' alt="logo" className="w-25 h-25" />
-                <h1 className="text-3xl font-bold text-gray-900">Luxe Lodge</h1>
+                <img src='logo.png' alt="logo" className="w-20 h-20" />
+                <h1 className={`text-2xl font-bold ${isScrolled ? "text-sky-900" : "text-white"} `}>Luxe Lodge</h1>
             </Link>
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-4 lg:gap-8">
+            <div className="hidden md:flex mx-20  items-center gap-4 lg:gap-8">
                 {navLinks.map((link, i) => (
                     <a key={i} href={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white text-xl"}`}>
                         {link.name}
@@ -42,9 +42,9 @@ const Header = () => {
                 </button>
             </div>
             {/* Desktop Right */}
-            <div className="hidden md:flex items-center gap-4">
-                <FontAwesomeIcon icon={faUser} className='text-black text-2xl' />
-                <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
+            <div className="hidden md:flex items-center ">
+                <FontAwesomeIcon icon={faUser} className={`text-black text-2xl ${isScrolled ? "text-black " : "text-white"}`}/>
+                <button className={`px-8 py-2.5 rounded-full transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
                     Login
                 </button>
             </div>

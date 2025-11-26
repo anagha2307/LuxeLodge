@@ -9,7 +9,7 @@ const LandingPage = () => {
     return (
         <div className="flex flex-col items-start justify-center px-6 md:px-16 text-white
             bg-[url('https://media.istockphoto.com/id/2110310187/photo/luxury-tropical-pool-villa-at-dusk.jpg?s=612x612&w=0&k=20&c=r8UTpMnbLWD_DOKHAcu6dw-MJEcGg0CTqt0ICa84D84=')] bg-cover bg-center bg-no-repeat w-full h-screen">
-            <p className="bg-blue-400 px-3 5 py-1 rounded-full mt-20">The Ultimate Hotel Experience</p>
+            <p className="bg-blue-400 px-3 5 py-1 rounded-full mt-25 md:mt-20">The Ultimate Hotel Experience</p>
             <h1 className="text-2xl md:text-5xl font-bold md:font-extrabold max-w-xl mt-4">Your Stay, Just a Click Away</h1>
             <h1 className="text-sm md:text-base max-w-130 mt-2">Bringing comfort and convenience together by offering curated stays, honest reviews, and quick bookings for stress-free travel planning.</h1>
             {/* Hotel Booking Form */}
