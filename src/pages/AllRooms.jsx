@@ -66,14 +66,14 @@ const AllRooms = () => {
                     <div className="flex flex-col items-start text-left">
                         <h1 className="text-4xl mt-5 md:text-[40px]">Hotel Rooms</h1>
                         <p className="text-sm md:text-base text-gray-500/90 mt-2 max-w-174">
-                            Lorem ipsum dolor sit amet...
+                            Discover handpicked stays tailored to your comfort — compare prices, browse amenities, and find the perfect room for every occasion, from quick getaways to luxury escapes.
                         </p>
                     </div>
                     {rooms.map(room => (
                         <div key={room._id} className="flex flex-col md:flex-row items-start py-10 gap-6 border-b border-gray-300 last:pb-30 last:border-0">
                             <img
                                 onClick={() => navigate(`/rooms/${room._id}`)}
-                                src={room.images}
+                                src={room.images[0]}
                                 className="max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer"
                             />
                             <div className="md:w-1/2 flex flex-col gap-2">
