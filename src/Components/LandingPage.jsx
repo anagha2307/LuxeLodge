@@ -4,7 +4,7 @@ import { faLocationDot ,faCalendar, faMagnifyingGlass} from '@fortawesome/free-s
 
 const LandingPage = () => {
     const cities = [
-        "New York", "Los Angeles", "London"
+        "New York", "Los Angeles", "London", "Paris"
     ]
     return (
         <div className="flex flex-col items-start justify-center px-4 md:px-16 text-white

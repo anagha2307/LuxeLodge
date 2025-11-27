@@ -6,7 +6,7 @@ import { faUser, faBarsStaggered, faXmark } from '@fortawesome/free-solid-svg-ic
 const Header = () => {
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Hotels', path: '/hotels' },
+        { name: 'Hotels', path: '/rooms' },
         { name: 'Contact', path: '/contact' },
         { name: 'About', path: '/about' },
     ];
@@ -23,28 +23,28 @@ const Header = () => {
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 bg-transparent w-full flex items-center justify-between px-4 md:px-16 lg:px-24 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-sky-600 backdrop-blur-lg py-3 md:py-1 h-18" : "py-3 md:py-1"}`}>
+        <nav className={`fixed top-0 left-0 bg-transparent w-full flex items-center justify-between px-4 md:px-16 lg:px-24 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-sky-600 backdrop-blur-lg py-2 md:py-1 h-18" : "bg-grey-100 py-2 md:py-1"}`}>
             {/* Logo */}
             <Link to={'/'} className="flex items-center">
                 <img src='logo.png' alt="logo" className="w-20 h-20" />
-                <h1 className={`text-2xl font-bold ${isScrolled ? "text-sky-900" : "text-white"} `}>Luxe Lodge</h1>
+                <h1 className={`text-2xl font-bold ${isScrolled ? "text-sky-900" : "text-red-900"} `}>Luxe Lodge</h1>
             </Link>
             {/* Desktop Nav */}
-            <div className="hidden md:flex mx-20  items-center gap-4 lg:gap-8">
+            <div className="hidden md:flex mx-20 items-center gap-4 lg:gap-10">
                 {navLinks.map((link, i) => (
-                    <a key={i} href={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white text-xl"}`}>
+                    <a key={i} href={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-blue-700" : "text-grey-500 text-lg"}`}>
                         {link.name}
                         <div className={`${isScrolled ? "bg-grey-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
                     </a>
                 ))}
-                <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-white'} transition-all`}>
+                <button className={`border px-4 text-grey-500 py-1 text-sm rounded-full cursor-pointer ${isScrolled ? 'text-sky-900' : 'border border-gray-300'} transition-all`}>
                     Dashboard
                 </button>
             </div>
             {/* Desktop Right */}
             <div className="hidden md:flex items-center ">
-                <FontAwesomeIcon icon={faUser} className={`text-black text-2xl ${isScrolled ? "text-black " : "text-white"}`}/>
-                <button className={`px-8 py-2.5 rounded-full transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
+                <FontAwesomeIcon icon={faUser} className={`text-black text-2xl ${isScrolled ? "text-white " : "text-blue-200"}`}/>
+                <button className={`px-8 py-2.5 rounded-full transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black border border-gary-300"}`}>
                     Login
                 </button>
             </div>

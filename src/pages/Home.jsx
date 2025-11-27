@@ -7,50 +7,9 @@ import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import Testimonials from '../Components/Testimonials'
+import { rooms } from '../assets/roomsData'
 const Home = () => {
     const navigate = useNavigate()
-    const rooms = [
-        {
-            _id: "1",
-            images: "https://images.unsplash.com/photo-1631049552057-403cdb8f0658?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww",
-            price: 120,
-            starRating: 4.9,
-            hotel: {
-                name: "Grand Palace Hotel",
-                address: "Kochi, Kerala"
-            }
-        },
-        {
-            _id: "2",
-            images: "https://gos3.ibcdn.com/289eebc9-d104-46af-b279-a238416c6543.JPEG",
-            price: 95,
-            starRating: 4.6,
-            hotel: {
-                name: "Seaside Retreat",
-                address: "Goa, India"
-            }
-        },
-        {
-            _id: "3",
-            images: "https://t4.ftcdn.net/jpg/06/32/20/07/360_F_632200724_WuOGPlu1XfDjqUinsBGzHXaa8TVtdqD9.jpg",
-            price: 150,
-            starRating: 4.9,
-            hotel: {
-                name: "Mountain View Resort",
-                address: "Manali, Himachal Pradesh"
-            }
-        },
-        {
-            _id: "4",
-            images: "https://images.unsplash.com/photo-1554995207-c18c203602cb",
-            price: 80,
-            starRating: 4.5,
-            hotel: {
-                name: "City Comfort Inn",
-                address: "Bangalore, Karnataka"
-            }
-        }
-    ];
     const Offers = [
         {
             _id: 1,
