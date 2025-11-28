@@ -43,9 +43,9 @@ const Home = () => {
                     <h1 className="text-3xl md:text-[30px] text-sky-900">Recommended Hotels</h1>
                     <p className="text-sm md:text-base text-justify text-gray-500/90 mt-2">From premium amenities to trusted reviews, these hotels are chosen to give you the best blend of style, value, and relaxation.</p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
                     {
-                        rooms.slice(0, 4).map((room, index) =>
+                        rooms.slice(0, 3).map((room, index) =>
                             <HotelCard key={room._id} room={room} index={index} />
                         )
                     }

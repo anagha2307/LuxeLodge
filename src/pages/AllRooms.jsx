@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faStar } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 
-const CheckBox = ({label,selected = false, onchange= () => {}}) =>{
-    return(
+const CheckBox = ({ label, selected = false, onchange = () => { } }) => {
+    return (
         <label className="flex items-center gap-3 cursor-pointer mt-2 text-sm">
-            <input type="checkbox" checked={selected} onChange={(e) => 
-            onchange(e.target.checked,label)} />
+            <input type="checkbox" checked={selected} onChange={(e) =>
+                onchange(e.target.checked, label)} />
             <span className="font-light select-none">{label}</span>
         </label>
     )
@@ -18,9 +18,10 @@ const CheckBox = ({label,selected = false, onchange= () => {}}) =>{
 const AllRooms = () => {
     const navigate = useNavigate()
     const [openFilters, setOpenFilters] = useState(false)
-    const bedTypes = ["Single Bed", "Double Bed" , "Luxury Room", "Family Suite"]
-    const priceRanges = ["0 to 500","500 to 1000","1000 to 1500","1500 to 2000",]
+    const bedTypes = ["Single Bed", "Double Bed", "Luxury Room", "Family Suite"]
+    const priceRanges = ["0 to 500", "500 to 1000", "1000 to 1500", "1500 to 2000",]
     const sortOptions = ["Price High to Low", "Price Low to High", "Newest First"]
+    const amenities = ["Free Wifi", "Minibar", "Room service", "Balcony"]
     return (
         <>
             <Header />
@@ -38,24 +39,24 @@ const AllRooms = () => {
                         <div className="px-5 pt-5">
                             <p className="font-medium text-gray-800 pb-2">Popular Filters</p>
                             {
-                                bedTypes.map((room,index) => (
-                                    <CheckBox key={index} label={room}/>
+                                bedTypes.map((room, index) => (
+                                    <CheckBox key={index} label={room} />
                                 ))
                             }
                         </div>
                         <div className="px-5 pt-5">
                             <p className="font-medium text-gray-800 pb-2">Price Ranges</p>
                             {
-                                priceRanges.map((range,index) => (
-                                    <CheckBox key={index} label={`${range}`}/>
+                                priceRanges.map((range, index) => (
+                                    <CheckBox key={index} label={`${range}`} />
                                 ))
                             }
                         </div>
                         <div className="px-5 py-5">
                             <p className="font-medium text-gray-800 pb-2">Sort By</p>
                             {
-                                sortOptions.map((option,index) => (
-                                    <CheckBox key={index} label={option}/>
+                                sortOptions.map((option, index) => (
+                                    <CheckBox key={index} label={option} />
                                 ))
                             }
                         </div>
@@ -78,7 +79,7 @@ const AllRooms = () => {
                             />
                             <div className="md:w-1/2 flex flex-col gap-2">
                                 <p className="text-gray-500">{room.hotel.city}</p>
-                                <p onClick={() => navigate(`/rooms/${room._id}`)}className="text-gray-800 text-3xl cursor-pointer">{room.hotel.name}</p>
+                                <p onClick={() => navigate(`/rooms/${room._id}`)} className="text-gray-800 text-3xl cursor-pointer">{room.hotel.name}</p>
                                 <div className="flex items-center gap-4">
                                     <div className="flex items-center">
                                         <FontAwesomeIcon icon={faStar} className="text-orange-500" />
@@ -93,16 +94,19 @@ const AllRooms = () => {
                                 <p className="text-lg font-medium text-gray-700">
                                     <span className="text-red-950 text-2xl">${room.price}</span>/night
                                 </p>
-                                <div className="grid grid-cols-2 text-xs">
-                                    <p>Free Wifi</p>
-                                    <p>Minibar</p>
-                                    <p>24 hour Room service</p>
-                                    <p>Balcony View</p>
+                                {/*Room amenities */}
+                                <div className="grid grid-cols-2 w-1/2 gap-2 text-xs">
+                                    {amenities.map((item, index) => (
+                                        <p key={index} className="py-1 text-center bg-gray-100 text-black">
+                                            {item}
+                                        </p>
+                                    ))}
                                 </div>
+
                             </div>
                         </div>
                     ))}
-                </div>        
+                </div>
             </div>
             <Footer />
         </>

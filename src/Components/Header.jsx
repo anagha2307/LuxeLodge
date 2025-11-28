@@ -1,7 +1,7 @@
-import React ,{useEffect, useState}from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faUser, faBarsStaggered, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faBarsStaggered, faXmark, faListCheck, faGear, faPowerOff } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
     const navLinks = [
@@ -10,10 +10,11 @@ const Header = () => {
         { name: 'Contact', path: '/contact' },
         { name: 'About', path: '/about' },
     ];
-
+    const navigate = useNavigate()
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    
+    const [openProfile, setOpenProfile] = useState(false)
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
@@ -43,10 +44,46 @@ const Header = () => {
             </div>
             {/* Desktop Right */}
             <div className="hidden md:flex items-center ">
-                <FontAwesomeIcon icon={faUser} className={`text-black text-2xl ${isScrolled ? "text-white " : "text-blue-200"}`}/>
+                <FontAwesomeIcon icon={faUser} onClick={() => setOpenProfile(true)} className={`text-black text-2xl cursor-pointer ${isScrolled ? "text-blue:800 " : "text-blue-200"}`} />
                 <button className={`px-8 py-2.5 rounded-full transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black border border-gary-300"}`}>
                     Login
                 </button>
+                {/* modal for profile */}
+                {
+                    openProfile && (
+                        <>
+                            <div onClick={() => setOpenProfile(false)} className="fixed inset-0 z-40"></div>
+                            <div className="absolute top-25 right-30 z-50" >
+                                <div class="relative flex flex-col mx-auto bg-white shadow-md rounded md:w-[370px] w-[370px] border border-gray-200 p-6 gap-1">
+                                    <div className="flex flex-col md:flex-row md:gap-3">
+                                        <div class="flex items-center justify-start p-6 rounded-full">
+                                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" alt="" className="w-10 h-10 rounded-full" />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <h2 class="text-gray-900 mt-4 text-md">Username</h2>
+                                            <p class="text-sm text-gray-600 mt-2">user@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <hr className="border-gray-300 w-full mx-auto" />
+                                    <div onClick={() => navigate('/my-bookings')} className="flex justify-start items-center gap-6 mt-4 cursor-pointer">
+                                        <FontAwesomeIcon icon={faListCheck} className="text-gray-500" />
+                                        <h2 class="text-gray-500 text-md">My Bookings</h2>
+                                    </div>
+                                    <hr className="border-gray-200 w-full mx-auto" />
+                                    <div className="flex justify-start items-center gap-6 mt-4 cursor-pointer">
+                                        <FontAwesomeIcon icon={faGear} className="text-gray-500" />
+                                        <h2 class="text-gray-500 text-md">Manage Settings</h2>
+                                    </div>
+                                    <hr className="border-gray-200 w-full mx-auto" />
+                                    <div className="flex justify-start items-center gap-6 mt-4 cursor-pointer">
+                                        <FontAwesomeIcon icon={faPowerOff} className="text-gray-500" />
+                                        <p class="text-gray-500 text-md">Logout</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    )
+                }
             </div>
             {/* Mobile Menu Button */}
             <div className="flex items-center gap-3 md:hidden">
@@ -63,7 +100,7 @@ const Header = () => {
                             {link.name}
                         </a>
                     ))}
-                <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">Dashboard</button>
+                <button onClick={() => setOpenProfile(true)} className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">Profile</button>
                 <button className="bg-black text-white px-8 py-2.5 rounded-full transition-all duration-500">Login</button>
             </div>
         </nav>
