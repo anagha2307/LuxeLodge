@@ -9,7 +9,8 @@ import MyBookings from './pages/MyBookings'
 import HotelReg from './Components/HotelReg'
 import Dashboard from './pages/admin/Dashboard'
 import AddRooom from './pages/admin/AddRoom'
-import ListRoom from './pages/admin/AddRoom'
+import ListRoom from './pages/admin/ListRoom'
+import Contact from './pages/Contact'
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       <Route path='/rooms' element={<AllRooms/>} />
       <Route path='/rooms/:id' element={<ViewRoom/>} />
       <Route path='/my-bookings' element={<MyBookings/>} />
-      
+      <Route path='/contact' element={<Contact />} />
+
       <Route path='/admin-dashboard' element={<Dashboard/>} />
       <Route path='/admin-add-room' element={<AddRooom />} />
       <Route path='/admin-room-list' element={<ListRoom/>} />
